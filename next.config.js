@@ -1,20 +1,15 @@
-const path = require('path')
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const path = require('path');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
 	webpack: (config, { dev }) => {
-		/**
-		 * Install and Update our Service worker
-		 * on our main entry file :)
-		 * Reason: https://github.com/ooade/NextSimpleStarter/issues/32
-		 */
-		const oldEntry = config.entry
+		const oldEntry = config.entry;
 
 		config.entry = () =>
 			oldEntry().then(entry => {
-				entry['main.js'] && entry['main.js'].push(path.resolve('./utils/offline'))
-				return entry
-			})
+				entry['main.js'] && entry['main.js'].push(path.resolve('./tools/registerServiceWorker'));
+				return entry;
+			});
 
 		/* Enable only in Production */
 		if (!dev) {
@@ -43,6 +38,6 @@ module.exports = {
 			)
 		}
 
-		return config
+		return config;
 	}
 }

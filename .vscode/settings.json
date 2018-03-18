@@ -1,0 +1,15 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "files.associations": {
+    "*.overrides": "less",
+    "*.variables": "less",
+    "*.php": "php"
+  },
+  "workbench.colorTheme": "Nord",
+  "php.validate.executablePath": "B:\\xampp\\php\\php.exe",
+  "html.validate.scripts": true,
+  "html.validate.styles": true,
+  "window.zoomLevel": 0,
+  "workbench.startupEditor": "newUntitledFile"
+}

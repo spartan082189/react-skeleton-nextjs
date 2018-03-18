@@ -1,0 +1,59 @@
+{
+  "presets": ["stage-2", "next/babel"],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": [
+              "./"
+            ],
+            "alias": {
+              "~": "./",
+              "actions": "./actions",
+              "api": "./api",
+              "components": "./components",
+              "constants": "./constants",
+              "hoc": "./hoc",
+              "static": "./static",
+              "layouts": "./layouts",
+              "pages": "./pages",
+              "reducers": "./reducers",
+              "selectors": "./selectors",
+              "store": "./store",
+              "utils": "./utils"
+            }
+          }
+        ],
+        ["transform-define", "env-config.js"]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": [
+              "./"
+            ],
+            "alias": {
+              "~": "./",
+              "actions": "./actions",
+              "api": "./api",
+              "components": "./components",
+              "constants": "./constants",
+              "hoc": "./hoc",
+              "static": "./static",
+              "layouts": "./layouts",
+              "pages": "./pages",
+              "reducers": "./reducers",
+              "selectors": "./selectors",
+              "utils": "./utils"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

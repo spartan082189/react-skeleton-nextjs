@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addTodo, removeTodo } from '../actions/todo'
+import { addTodo, removeTodo } from 'actions/todo'
 import TodoItem from './TodoItem'
 
 class Todo extends React.Component {
@@ -21,6 +21,7 @@ class Todo extends React.Component {
 	}
 
 	render() {
+    console.log(process.env.API_URL);
 		return (
 			<div className="mdl-card mdl-shadow--2dp">
 				<form onSubmit={this.addTodos}>
