@@ -12,4 +12,4 @@ export default (WrappedComponent) => {
     }
   }
   return withLayout;
-}
+};

@@ -1,6 +1,5 @@
-import withLayout from 'hoc/withLayout';
 import PropTypes from 'prop-types';
-import { compose } from 'recompose';
+import withLayout from 'hoc/withLayout';
 
 const Home = () => {
   return (
@@ -13,6 +12,4 @@ const Home = () => {
 Home.propTypes = {
 };
 
-export default compose(
-  withLayout
-)(Home);
+export default withLayout(Home);

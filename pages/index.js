@@ -1,27 +1,15 @@
-import 'isomorphic-fetch';
+import React, { Component } from 'react';
 import withRedux from 'next-redux-wrapper';
-
-import Fork from '../components/Fork';
-import Todo from '../components/Todo';
 import Home from 'pages/home';
 import withLayout from 'hoc/withLayout';
-
+import { compose } from 'recompose';
 import initStore from 'store/createStore';
 
-class Index extends React.Component {
-	static async getInitialProps({ store }) {
-		// Adding a default/initialState can be done as follows:
-		// store.dispatch({ type: 'ADD_TODO', text: 'It works!' });
-		const res = await fetch(
-			'https://api.github.com/repos/ooade/NextSimpleStarter'
-		);
-		const json = await res.json();
-		return { stars: json.stargazers_count };
+class Index extends Component {
+	static async getInitialProps() {
+		return {};
 	}
-
 	render() {
-    const { stars } = this.props;
-    console.log(this.props);
 		return (
 			<div>
 				<Home />
@@ -30,4 +18,7 @@ class Index extends React.Component {
 	}
 }
 
-export default withRedux(initStore)(Index);
+export default compose(
+  withRedux(initStore),
+  withLayout
+)(Index);

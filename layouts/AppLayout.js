@@ -6,7 +6,6 @@ import muiTheme from 'utils/getMuiTheme';
 import { MuiThemeProvider } from 'material-ui/styles';
 // import 'styles/custom.css';
 
-
 class AppLayout extends Component {
   render() {
     const { children } = this.props;
